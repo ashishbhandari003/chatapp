@@ -1,0 +1,1 @@
+Sidekiq::Cron::Job.create(name: 'Notification - at 3:00 Am on every Monday', cron: '00 3 * * MON', klass: 'NotificationWorker')

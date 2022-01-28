@@ -1,0 +1,14 @@
+<%= render 'navbar' %>
+
+<% if @user %>
+	<input type="hidden" id="userId" name="userId" value="<%=@user.id%>">
+	<p>Say Something</p>
+	<textarea id="input" rows="4" cols="50">
+	</textarea>
+	<div id="messages">
+		<% Message.all.each do |message| %>
+			<%="#{message.user.email}: #{message.content}"%>
+			<br>
+		<% end %>
+	</div>
+<% end %>
